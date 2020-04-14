@@ -1,0 +1,30 @@
+方法1：
+执行用时：7636 ms
+内存消耗：14.4 MB
+class Solution:
+    def twoSum(self, nums: List[int], target: int):
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i] + nums[j] == target:
+                    return i,j
+方法2：
+执行用时：1024 ms
+内存消耗：14.4 MB
+class Solution:
+    def twoSum(self, nums: List[int], target: int):
+        for index,elem in enumerate(nums):
+            num = nums[index+1:]
+            if target - elem in num:
+                return index,num.index(target-elem)+index+1
+方法3：
+执行用时：1356 ms
+内存消耗：14.3 MB
+class Solution:
+    def twoSum(self, nums: List[int], target: int):
+        for index_1,elem in enumerate(nums):
+            if target - elem in nums:
+                index_2 = nums.index(target-elem)
+                if index_1 == index_2:
+                    continue
+                else:
+                    return index_1,index_2
