@@ -7,6 +7,9 @@ class Solution:
             for j in range(i+1,len(nums)):
                 if nums[i] + nums[j] == target:
                     return i,j
+时间复杂度：O(n^2)
+空间复杂度：O(1)
+
 方法2：
 执行用时：1024 ms
 内存消耗：14.4 MB
